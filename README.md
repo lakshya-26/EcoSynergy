@@ -34,30 +34,14 @@ To run this project locally, follow these steps:
    ```sh
    git clone https://github.com/your-username/your-repo.git
 - Navigate to the frontend directory:
-sh
-Copy code
-- cd your-repo/frontend
-Install dependencies:
-sh
-Copy code
-- npm install
-- Start the development server:
-sh
-Copy code
-- npm run dev
+- cd client
+- Install dependencies:npm install
+- Start the development server: npm run dev
 - Backend Setup
 - Navigate to the backend directory:
-sh
-Copy code
-- cd your-repo/backend
-- Install dependencies:
-sh
-Copy code
-- npm install
-- Start the server:
-sh
-Copy code
-- node index.js
+- cd aerver
+- Install dependencies: npm install
+- Start the server: node index.js
 - Usage
 - Run the frontend and backend servers as described in the installation section.
 - Open your browser and navigate to http://localhost:3000 to see the frontend.
