@@ -1,0 +1,6 @@
+MONGODB_URI=yourmongoDB uri
+ACCESS_TOKEN_SECRET=your access token (ex -> 5326)
+ACCESS_TOKEN_EXPIRY=1d
+REFRESH_TOKEN_SECRETrefresh token secret (ex -> 535774)
+REFRESH_TOKEN_EXPIRY=10d
+PORT=3000
