@@ -1,7 +1,7 @@
 # EcoSynergy
 # Hack4Bengal Project
 
-This project was developed as part of the Hack4Bengal hackathon. Due to unforeseen circumstances, we were unable to fully integrate the frontend and backend during the time of submission. However, both parts are fully functional individually.
+This project was developed as part of the Hack4Bengal hackathon. Due to unforeseen circumstances, we were unable to fully integrate the frontend and backend during the time of submission. However, we are still working on it and the project will be live soon .
 
 ## Table of Contents
 - Description
