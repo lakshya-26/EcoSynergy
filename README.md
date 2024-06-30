@@ -17,9 +17,11 @@ This project was developed as part of the Hack4Bengal hackathon. Due to unforese
 This project aims to provide a brief description of our project's purpose and functionality. Although the project is under development, we have made significant progress on both the frontend and backend components.
 
 ## Features
-- **Frontend**: Developed using Next.js, our frontend provides a solid understanding of the user interface and the flow of the system.
-- **Backend**: Built with Node.js and Express, our backend handles all server side features to handle authentication , privacy , data transfer and access and CRUD operations..
-
+- Food Tracking - Monitor and analyze your food consumption patterns to reduce waste and make sustainable dietary choices , contributing to a healthier planet.
+- Waste Tracking - Track and manage your waste production , encouraging recycling and waste reduction to minimise your environmental footprint.
+- Water Tracking - Keep track of your water usage , promoting conservation efforts and efficient water management practices to save this precious resource .
+- Energy Tracking - Monitor your energy consumption ,identify inefficiencies and optimise usage to reduce your carbon footprint and energy bills.
+- Transportation Tracking - Analyze your transportation habits , including vehicle usage and commuting patterns , to reduce emissions and adopt greener travel options . 
 ## Installation
 To run this project locally, follow these steps:
 
