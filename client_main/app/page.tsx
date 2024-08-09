@@ -1,13 +1,12 @@
 import React from "react";
 import Test from "@/components/Test";
-import Layout from "@/layouts/Layout";
+import SlideShow from "@/components/HomePage/SlideShow";
 
 export default function Home() {
   return (
     <div>
-      <Layout>
+        <SlideShow />
         <Test />
-      </Layout>
     </div>
   );
 }
