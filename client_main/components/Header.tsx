@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import logo from "../public/logoeco.png";
 import Nav from "./Nav/Nav";
+import MenuLogin from "./UserMenu/MenuLogin";
 
 const Header = () => {
   return (
@@ -12,6 +13,8 @@ const Header = () => {
         <div className="block">
             <Nav />
         </div>
+        <div className="flex gap-6">
+        <MenuLogin />
         <Link href="/" className="text-3xl font-bold tracking-tight text-orange-500">
           <motion.div
             initial={{ y: -100, opacity: 0 }}
@@ -25,6 +28,7 @@ const Header = () => {
             />
           </motion.div>
         </Link>
+        </div>
       </div>
     </div>
   );

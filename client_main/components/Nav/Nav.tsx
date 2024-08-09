@@ -1,4 +1,4 @@
-import { CircleUserRound, Menu } from "lucide-react";
+import { Apple, Biohazard, Car, CircleUserRound, HousePlug, Menu, Smartphone } from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -26,7 +26,7 @@ const Nav = () => {
               email
             </span>
           ) : (
-            <span>Welcome to CraveCart</span>
+            <span>Welcome to EcoSynergy</span>
           )}
         </SheetTitle>
         <Separator />
@@ -34,19 +34,36 @@ const Nav = () => {
           {1 ? (
             <>
             <Link href="/order-status" className="flex bg-white items-center font-bold hover:text-[#1e733d]">
-            Order Status
+            <span className="flex items-center font-bold font-sans gap-2"><HousePlug /> Energy Consumption Tracking</span>
           </Link>
+          <Separator />
           <Link href="/manage-restaurant" className="flex bg-white items-center font-bold hover:text-[#1e733d]">
-            My Restaurant 
+          <span className="flex items-center font-bold font-sans gap-2"><Apple /> Food Consumption Tracking</span>
           </Link>
+          <Separator />
           <Link
             href="/user-profile"
             className="flex bg-white items-center font-bold hover:text-[#1e733d]"
           >
-            User Profile
+            <span className="flex items-center font-bold font-sans gap-2"><Car /> Transport Tracking</span>
           </Link>
+          <Separator />
+          <Link
+            href="/user-profile"
+            className="flex bg-white items-center font-bold hover:text-[#1e733d]"
+          >
+            <span className="flex items-center font-bold font-sans gap-2"><Biohazard /> Waste Tracking</span>
+          </Link>
+          <Separator />
+          <Link
+            href="/user-profile"
+            className="flex bg-white items-center font-bold hover:text-[#1e733d]"
+          >
+            <span className="flex items-center font-bold font-sans gap-2"><Smartphone /> Mobile Usage Tracking</span>
+          </Link>
+          <Separator />
           <Button
-            className="flex items-center px-3 font-bold hover:bg-gray-500"
+            className="flex items-center px-3 font-bold font-sans hover:bg-[#1e733d]"
             onClick={() => console.log("hello")}
           >
             Logout
@@ -54,7 +71,7 @@ const Nav = () => {
             </>
           ) : (
             <Button
-              className="flex-1 font-bold bg-orange-500"
+              className="flex-1 font-bold font-sans bg-[#1e733d]"
               onClick={() => console.log("hello")}
             >
               Log In
