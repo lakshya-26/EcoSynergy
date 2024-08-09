@@ -138,7 +138,7 @@
 .heading::after {
   display: block;
   height: 2px;
-  background-color: #ab3c2a;
+  background-color: #1e733d;
   content: " ";
   width: 100px;
   margin: 0 auto;

@@ -1,6 +1,6 @@
 "use client"
 import { useState, useEffect } from "react";
-import data from "../../public/slideData/data";
+import {people as data} from "../../public/slideData/data";
 
 const SlideShow = () => {
   const [people] = useState(data);
