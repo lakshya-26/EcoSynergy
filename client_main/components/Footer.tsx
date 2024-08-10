@@ -17,8 +17,6 @@ import {
 const Footer = () => {
   return (
     <>
-    <h2 className="footerHeading">
-        </h2>
     <footer className="bg-[#1e733d] py-16">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-4 md:px-0">
         <div className="flex flex-col items-center md:items-start mb-8 md:mb-0">

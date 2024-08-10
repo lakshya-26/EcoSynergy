@@ -16,10 +16,10 @@ const Video: React.FC = () => {
         </div>
       </div>
       <div className="w-full md:w-1/2 p-4 text-left">
-        <h2 className="text-3xl font-bold mb-4 text-green-800 heading text-center">
+        <h2 className="text-3xl font-sans font-bold mb-4 text-green-800 heading text-center">
           Effects of Carbon Footprint
         </h2>
-        <p className="text-gray-700 leading-relaxed text-justify">
+        <p className="text-gray-700 leading-relaxed text-justify font-sans">
           The carbon footprint from human activities is wreaking havoc on our
           planet. It traps heat, leading to rising temperatures, melting ice
           caps, and rising sea levels. Extreme weather events like hurricanes,

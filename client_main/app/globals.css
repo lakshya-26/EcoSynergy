@@ -156,6 +156,7 @@
 }
 
 .bor-3 {
+  color: #46484a;
   padding: 10px;
   background:
    radial-gradient(farthest-side at top    left ,#1e733d 97%,#1e733d) top -15px    left  -15px,
@@ -189,4 +190,27 @@
   border-color:currentColor;
   -webkit-mask-position:0% 100%,100% 100%,top;
   transition: 0.3s,-webkit-mask-position 0.3s 0.3s;
+}
+.blog-6 {
+  padding: 8px;
+  border-radius:0 0 12px 12px;
+  border:3px solid #0000;
+  border-top: none;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) 50% 100%/80px 20px,
+    linear-gradient(#fff 0 0) 50% 100%/80px 20px,
+    linear-gradient(#fff 0 0) top /calc(100% - 12px) calc(100% - 12px);
+  -webkit-mask-repeat:no-repeat;
+  transition: 0.3s,border-color 0.3s 0.3s;
+}
+.blog-6:hover {
+  border-color:#1e733d;
+  -webkit-mask-position:0% 100%,100% 100%,top;
+  transition: 0.3s,-webkit-mask-position 0.3s 0.3s;
+}
+
+.feature{
+  background: url('../public/Oroeco+background.jpeg');
+  width: 1286px;
+  height: 966px;
 }

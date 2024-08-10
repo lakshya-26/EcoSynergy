@@ -2,6 +2,8 @@ import React from "react";
 import { apiData } from "../public/slideData/data";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
 import Video from "./HomePage/Video";
+import BlogSec from "./HomePage/BlogSec";
+import FeaturedSection from "./HomePage/FeaturedSection";
 
 const Test = () => {
   return (
@@ -20,7 +22,7 @@ const Test = () => {
                     {card.title}
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="font-sans">{card.content}</CardContent>
+                <CardContent className="font-sans text-gray-700">{card.content}</CardContent>
               </Card>
             ))}
           </div>
@@ -30,17 +32,14 @@ const Test = () => {
       <div className="mt-16">
         <Video />
       </div>
-      {/* Ensure this repeated text doesn't affect the UI */}
-      <div>Test</div>
-      <div>Test</div>
-      <div>Test</div>
-      <div>Test</div>
-      <div>Test</div>
-      <div>Test</div>
-      <div>Test</div>
-      <div>Test</div>
-      <div>Test</div>
-      <div>Test</div>
+
+      <div className="mt-16">
+        <BlogSec />
+      </div>
+
+      <div className="">
+        <FeaturedSection />
+      </div>
     </>
   );
 };

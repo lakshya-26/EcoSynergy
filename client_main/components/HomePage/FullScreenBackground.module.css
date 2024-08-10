@@ -1,0 +1,16 @@
+/* components/FullScreenBackground.module.css */
+.fullscreenBg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: url('../../public//Oroeco+background.jpeg'); /* Adjust the path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.loginButton:hover {
+    background-color: #005bb5;
+}
