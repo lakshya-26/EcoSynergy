@@ -33,31 +33,31 @@ const Nav = () => {
         <SheetDescription className="flex flex-col gap-4">
           {1 ? (
             <>
-            <Link href="/order-status" className="flex bg-white items-center font-bold hover:text-[#1e733d]">
+            <Link href="/order-status" className="flex bg-white items-center font-bold hover:text-[#1e733d] curved-6">
             <span className="flex items-center font-bold font-sans gap-2"><HousePlug /> Energy Consumption Tracking</span>
           </Link>
           <Separator />
-          <Link href="/manage-restaurant" className="flex bg-white items-center font-bold hover:text-[#1e733d]">
+          <Link href="/manage-restaurant" className="flex bg-white items-center font-bold hover:text-[#1e733d] curved-6">
           <span className="flex items-center font-bold font-sans gap-2"><Apple /> Food Consumption Tracking</span>
           </Link>
           <Separator />
           <Link
             href="/user-profile"
-            className="flex bg-white items-center font-bold hover:text-[#1e733d]"
+            className="flex bg-white items-center font-bold hover:text-[#1e733d] curved-6"
           >
             <span className="flex items-center font-bold font-sans gap-2"><Car /> Transport Tracking</span>
           </Link>
           <Separator />
           <Link
             href="/user-profile"
-            className="flex bg-white items-center font-bold hover:text-[#1e733d]"
+            className="flex bg-white items-center font-bold hover:text-[#1e733d] curved-6"
           >
             <span className="flex items-center font-bold font-sans gap-2"><Biohazard /> Waste Tracking</span>
           </Link>
           <Separator />
           <Link
             href="/user-profile"
-            className="flex bg-white items-center font-bold hover:text-[#1e733d]"
+            className="flex bg-white items-center font-bold hover:text-[#1e733d] curved-6"
           >
             <span className="flex items-center font-bold font-sans gap-2"><Smartphone /> Mobile Usage Tracking</span>
           </Link>
