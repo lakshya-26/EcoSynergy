@@ -1,11 +1,11 @@
 import React from "react";
 import { apiData } from "../public/slideData/data";
-import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import Video from "./HomePage/Video";
 import BlogSec from "./HomePage/BlogSec";
 import FeaturedSection from "./HomePage/FeaturedSection";
 
-const Test = () => {
+const Home = () => {
   return (
     <>
       <div className="flex flex-col gap-12">
@@ -44,4 +44,4 @@ const Test = () => {
   );
 };
 
-export default Test;
+export default Home;

@@ -1,4 +1,4 @@
-import { Apple, Biohazard, Car, CircleUserRound, HousePlug, Menu, Smartphone } from "lucide-react";
+import { Apple, Biohazard, Car, CircleUserRound, GlassWater, HousePlug, Menu, Smartphone } from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -9,9 +9,11 @@ import {
 import { Separator } from "../ui/separator";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import { useUser } from "@auth0/nextjs-auth0/client";
 
 
 const Nav = () => {
+  const {user} = useUser();
   return (
     <div className="">
       <Sheet>
@@ -20,10 +22,10 @@ const Nav = () => {
       </SheetTrigger>
       <SheetContent className="space-y-3" side={"left"}>
         <SheetTitle>
-          {0 ? (
+          {user ? (
             <span className="flex items-center font-bold gap-2">
               <CircleUserRound className="text-[#1e733d]" />
-              email
+              {user?.name}
             </span>
           ) : (
             <span>Welcome to EcoSynergy</span>
@@ -31,7 +33,7 @@ const Nav = () => {
         </SheetTitle>
         <Separator />
         <SheetDescription className="flex flex-col gap-4">
-          {1 ? (
+          {user ? (
             <>
             <Link href="/order-status" className="flex bg-white items-center font-bold hover:text-[#1e733d] curved-6">
             <span className="flex items-center font-bold font-sans gap-2"><HousePlug /> Energy Consumption Tracking</span>
@@ -59,12 +61,19 @@ const Nav = () => {
             href="/user-profile"
             className="flex bg-white items-center font-bold hover:text-[#1e733d] curved-6"
           >
+            <span className="flex items-center font-bold font-sans gap-2"><GlassWater /> Water Tracking</span>
+          </Link>
+          <Separator />
+          <Link
+            href="/user-profile"
+            className="flex bg-white items-center font-bold hover:text-[#1e733d] curved-6"
+          >
             <span className="flex items-center font-bold font-sans gap-2"><Smartphone /> Mobile Usage Tracking</span>
           </Link>
           <Separator />
           <Button
             className="flex items-center px-3 font-bold font-sans hover:bg-[#1e733d]"
-            onClick={() => console.log("hello")}
+            onClick={() => (window.location.href = "/api/auth/logout")}
           >
             Logout
           </Button>
@@ -72,7 +81,7 @@ const Nav = () => {
           ) : (
             <Button
               className="flex-1 font-bold font-sans bg-[#1e733d]"
-              onClick={() => console.log("hello")}
+              onClick={() => (window.location.href = "/api/auth/login")}
             >
               Log In
             </Button>

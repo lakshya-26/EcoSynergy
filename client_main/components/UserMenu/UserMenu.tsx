@@ -8,13 +8,15 @@ import {
 import { Separator } from "../ui/separator";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import { useUser } from "@auth0/nextjs-auth0/client";
 
 const UsernameMenu = () => {
+  const {user} = useUser();
   return (
     <DropdownMenu>
       <DropdownMenuTrigger className="flex items-center px-3 font-semibold font-sans gap-2 bor-3 rounded-md">
         <CircleUserRound className="" />
-        Lakshya <ChevronDown />
+        {user?.name} <ChevronDown />
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuItem>
@@ -32,7 +34,7 @@ const UsernameMenu = () => {
         <DropdownMenuItem>
           <Button
             className="flex flex-1 font-bold bg-[#1e733d] hover:bg-primary/90"
-            onClick={() => console.log('object')}
+            onClick={() => (window.location.href = "/api/auth/logout")}
           >
             Logout
           </Button>
