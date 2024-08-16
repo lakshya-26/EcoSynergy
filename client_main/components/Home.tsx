@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import Video from "./HomePage/Video";
 import BlogSec from "./HomePage/BlogSec";
 import FeaturedSection from "./HomePage/FeaturedSection";
+import FeatureCard from "./FeaturesList/FeatureCard";
 
 const Home = () => {
   return (
@@ -31,6 +32,10 @@ const Home = () => {
 
       <div className="mt-16">
         <Video />
+      </div>
+
+      <div className="mt-16">
+        <FeatureCard />
       </div>
 
       <div className="mt-16">

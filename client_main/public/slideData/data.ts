@@ -192,4 +192,4 @@ const features: featuredData[] = [
   },
 ];
 
-export { people, apiData, blogData };
+export { people, apiData, blogData, features };
