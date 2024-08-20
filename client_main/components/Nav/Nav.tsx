@@ -1,3 +1,6 @@
+//component/nav/nav.tsx
+
+"use client"
 import { Apple, Biohazard, Car, CircleUserRound, GlassWater, HousePlug, Menu, Smartphone } from "lucide-react";
 import {
   Sheet,
@@ -10,10 +13,20 @@ import { Separator } from "../ui/separator";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { useUser } from "@auth0/nextjs-auth0/client";
+import { useEffect } from "react";
+import { createOrFetchUser } from "@/utils/api";
+
 
 
 const Nav = () => {
   const {user} = useUser();
+  if(user){
+    useEffect(() => {
+      if (user?.sub && user?.email && user?.name) {
+        createOrFetchUser(user.sub, user.email, user.name);
+      }
+    }, [user]);
+  }
   return (
     <div className="">
       <Sheet>

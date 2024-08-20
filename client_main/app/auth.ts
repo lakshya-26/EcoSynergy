@@ -9,5 +9,9 @@ export const auth0 = initAuth0({
   routes:{
     callback: `${process.env.NEXT_PUBLIC_BASE_URL}/`,
     postLogoutRedirect: `${process.env.NEXT_PUBLIC_BASE_URL}/`
+  },
+  authorizationParams: {
+    audience:process.env.AUTH0_AUDIENCE,
+    scope: 'openid profile email',
   }
 });

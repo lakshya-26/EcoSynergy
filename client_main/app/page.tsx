@@ -1,3 +1,5 @@
+// app/page.tsx
+
 import React from "react";
 import HomePage from "@/components/Home";
 import SlideShow from "@/components/HomePage/SlideShow";
