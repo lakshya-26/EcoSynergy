@@ -39,7 +39,28 @@ const createCurrentUser = async(req: Request, res: Response) => {
     }
 }
 
+const updateCurrentUser = async(req: Request, res: Response) => {
+    try {
+        const {addressLine1, country, city} = req.body;
+        const user = await User.findById(req.userId);
+
+        if(!user){
+            return res.status(404).json({message: "user not found!"});
+        }
+
+        user.addressLine1 = addressLine1;
+        user.country = country;
+        user.city=city;
+
+        await user.save();
+        res.send(user);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 export default {
     getCurrentUser,
     createCurrentUser,
+    updateCurrentUser
 }

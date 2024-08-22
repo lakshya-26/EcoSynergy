@@ -17,7 +17,7 @@ const Header = () => {
         </div>
         <div className="flex gap-6">
           <MenuLogin />
-          <Link href="/" className="text-3xl font-bold tracking-tight text-orange-500">
+          <Link href="/" className="text-3xl font-bold tracking-tight">
             <motion.div
               initial={{ y: -100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}

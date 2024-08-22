@@ -72,7 +72,7 @@ export const getUserData = async () => {
   }
 };
 
-type updateMyUserRequest = {
+export type updateMyUserRequest = {
   addressLine1: string;
   city: string;
   country: string;

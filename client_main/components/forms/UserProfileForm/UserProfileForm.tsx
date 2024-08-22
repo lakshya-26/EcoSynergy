@@ -19,7 +19,7 @@ import { z } from "zod";
 
 const formSchema = z.object({
   email: z.string().optional(),
-  name: z.string().min(1, "name is required"),
+  name: z.string().optional(),
   addressLine1: z.string().min(1, "addressLine1 is required"),
   city: z.string().min(1, "city is required"),
   country: z.string().min(1, "country is required"),
@@ -46,13 +46,14 @@ const UserProfileForm = ({ onSave, isLoading, currentUser, title="User Profile F
   }, [currentUser, form])
 
   return (
-    <Form {...form}>
+    <div>
+      <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSave)}
         className="space-y-4 bg-gray-50 rounded-lg md:p-10 px-6"
       >
         <div>
-          <h2 className="text-2xl font-bold">{title}</h2>
+          <h2 className="text-4xl font-bold text-center text-[#1e733d] p-4 heading">{title}</h2>
           <FormDescription>
             View and change your profile information here
           </FormDescription>
@@ -78,7 +79,7 @@ const UserProfileForm = ({ onSave, isLoading, currentUser, title="User Profile F
             <FormItem>
               <FormLabel>Name</FormLabel>
               <FormControl>
-                <Input {...field} className="bg-white" />
+                <Input {...field} disabled className="bg-white" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -132,12 +133,13 @@ const UserProfileForm = ({ onSave, isLoading, currentUser, title="User Profile F
         {isLoading ? (
           <LoadingButton />
         ) : (
-          <Button type="submit" className="bg-orange-500">
+          <Button type="submit" className="bg-[#1e733d]">
             {buttonText}
           </Button>
         )}
       </form>
     </Form>
+    </div>
   );
 };
 
