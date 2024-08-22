@@ -11,13 +11,24 @@ import { Separator } from "../ui/separator";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { useUser } from "@auth0/nextjs-auth0/client";
+import Image from "next/image";
 
 const UsernameMenu = () => {
   const {user} = useUser();
   return (
     <DropdownMenu>
+      {user?.picture ? (
+          <Image
+            src={user.picture}
+            alt={user.name || "User"}
+            width={30}
+            height={30}
+            className="rounded-full"
+          />
+        ) : (
+          <CircleUserRound className="text-[#46484a]" /> 
+        )}
       <DropdownMenuTrigger className="flex items-center px-3 font-semibold font-sans gap-2 bor-3 rounded-md">
-        <CircleUserRound className="" />
         {user?.name} <ChevronDown />
       </DropdownMenuTrigger>
       <DropdownMenuContent>
