@@ -15,6 +15,11 @@ import Image from "next/image";
 
 const UsernameMenu = () => {
   const {user} = useUser();
+
+  const getFirstName = (fullName: any) => {
+    if (!fullName) return '';
+    return fullName.split(' ')[0]; 
+  };
   return (
     <DropdownMenu>
       {user?.picture ? (
@@ -29,7 +34,7 @@ const UsernameMenu = () => {
           <CircleUserRound className="text-[#46484a]" /> 
         )}
       <DropdownMenuTrigger className="flex items-center px-3 font-semibold font-sans gap-2 bor-3 rounded-md">
-        {user?.name} <ChevronDown />
+      {getFirstName(user?.name)} <ChevronDown />
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuItem>
