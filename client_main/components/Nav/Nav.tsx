@@ -14,7 +14,7 @@ import { Button } from "../ui/button";
 import Link from "next/link";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import { useEffect } from "react";
-import { createOrFetchUser } from "@/utils/api";
+import { createOrFetchUser } from "@/utils/UserApi";
 
 
 
