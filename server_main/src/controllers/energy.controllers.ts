@@ -93,5 +93,26 @@ const logEnergydata = async (req: Request, res: Response) => {
   const calculateCarbonFootprint = (usage: number): number => {
     return usage * CARBON_INTENSITY; // Carbon Footprint (kg CO2) = Energy Usage (kWh) * Carbon Intensity (kg CO2 per kWh)
   };
-  
-  export { logEnergydata };
+
+
+const getEnergyData = async (req: Request, res: Response) => {
+  try {
+    // Find all energy data entries for the user
+    const energyData = await Energy.find({ user: req.userId }).sort({ year: 1, month: 1 });
+
+    if (!energyData || energyData.length === 0) {
+      return res.status(404).json({ message: "No energy data found for this user." });
+    }
+
+    // Return the full data, including the imageUrl
+    return res.status(200).json(energyData);
+  } catch (err: any) {
+    console.error(err);
+    return res.status(500).json({ message: err.message });
+  }
+};
+
+export { 
+  logEnergydata,
+  getEnergyData
+ };

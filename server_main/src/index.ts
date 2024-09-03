@@ -2,6 +2,7 @@ import express, { Request, Response } from "express";
 import cors from "cors";
 import "dotenv/config";
 import userRoutes from "./routes/userRoutes";
+import energyRoutes from "./routes/energyRoutes";
 import mongoose from "mongoose";
 
 mongoose
@@ -19,6 +20,7 @@ app.get("/health", async (req: Request, res: Response) => {
   });
   
 app.use("/api/my/user", userRoutes);
+app.use("/api/my/energyTracking", energyRoutes);
 
 
 app.listen(7000, () => {

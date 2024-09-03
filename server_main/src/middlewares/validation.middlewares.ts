@@ -20,26 +20,24 @@ export const validateMyUserRequest = [
 
 ]
 
-export const validateMyRestaurantRequest = [
-    body("restaurantName").notEmpty().withMessage("Restaurant name is required"),
-  body("city").notEmpty().withMessage("City is required"),
-  body("country").notEmpty().withMessage("Country is required"),
-  body("deliveryPrice")
-    .isFloat({ min: 0 })
-    .withMessage("Delivery price must be a positive number"),
-  body("estimatedDeliveryTime")
-    .isInt({ min: 0 })
-    .withMessage("Estimated delivery time must be a postivie integar"),
-  body("cuisines")
-    .isArray()
-    .withMessage("Cuisines must be an array")
-    .not()
-    .isEmpty()
-    .withMessage("Cuisines array cannot be empty"),
-  body("menuItems").isArray().withMessage("Menu items must be an array"),
-  body("menuItems.*.name").notEmpty().withMessage("Menu item name is required"),
-  body("menuItems.*.price")
-    .isFloat({ min: 0 })
-    .withMessage("Menu item price is required and must be a postive number"),
-  handleValidationErrors,
+export const validateMyEnergyRequest = [
+  body("month")
+  .isInt({ min: 1, max: 12 })
+  .withMessage("Month must be an integer between 1 and 12"),
+body("year")
+  .isInt({ min: 1900 }) // Assuming you don't want data before 1900
+  .withMessage("Year must be a valid integer"),
+body("usage")
+  .isFloat({ min: 0 })
+  .withMessage("Usage must be a positive number"),
+body("carbonFootprint")
+  .isFloat({ min: 0 })
+  .withMessage("Carbon footprint must be a positive number"),
+body("totalCarbonFootprint")
+  .isFloat({ min: 0 })
+  .withMessage("Total carbon footprint must be a positive number"),
+body("difference")
+  .isFloat()
+  .withMessage("Difference must be a number"),
+handleValidationErrors,
 ]
