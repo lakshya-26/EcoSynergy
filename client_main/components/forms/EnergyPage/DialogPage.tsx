@@ -2,7 +2,6 @@
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
-  DialogTrigger,
   DialogContent,
   DialogTitle,
   DialogDescription,
@@ -22,12 +21,12 @@ const DialogPage = () => {
   return (
     <div>
       <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-        <DialogContent>
-          <DialogTitle>Important Notice</DialogTitle>
-          <DialogDescription>
+        <DialogContent className="p-12">
+          <DialogTitle className="text-xl text-[#1e733d] font-bold">Important Notice</DialogTitle>
+          <DialogDescription className="text-l bg-gray-50">
             Please crop your meter images like these and then upload it to get
             the accurate extractions ↓ ↓
-            <div className="flex gap-4 items-center">
+            <div className="flex gap-4 items-center mt-2">
               <Image src={meter1} width={100} height={100} alt="meter" />
               <Image src={meter2} width={100} height={100} alt="meter" />
             </div>

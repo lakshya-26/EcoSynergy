@@ -1,5 +1,3 @@
-//component/nav/nav.tsx
-
 "use client";
 import {
   Apple,
@@ -22,24 +20,31 @@ import { Separator } from "../ui/separator";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { useUser } from "@auth0/nextjs-auth0/client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { createOrFetchUser } from "@/utils/UserApi";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const Nav = () => {
   const { user } = useUser();
-  if (user) {
-    useEffect(() => {
-      if (user?.sub && user?.email && user?.name) {
-        createOrFetchUser(user.sub, user.email, user.name);
-      }
-    }, [user]);
-  }
+  const [isOpen, setIsOpen] = useState(false); // State to manage sheet open/close
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (user?.sub && user?.email && user?.name) {
+      createOrFetchUser(user.sub, user.email, user.name);
+    }
+  }, [user]);
+
+  useEffect(() => {
+    setIsOpen(false); // Close the sheet on path change
+  }, [pathname]); // Run this effect when the path changes
+
   return (
     <div className="">
-      <Sheet>
-        <SheetTrigger>
-          <Menu className="text-[#1e733d] " />
+      <Sheet open={isOpen} onOpenChange={setIsOpen}>
+        <SheetTrigger asChild>
+          <Menu className="text-[#1e733d]" />
         </SheetTrigger>
         <SheetContent className="space-y-3" side={"left"}>
           <SheetTitle>
@@ -67,7 +72,7 @@ const Nav = () => {
             {user ? (
               <>
                 <Link
-                  href="/order-status"
+                  href="/energy-tracking"
                   className="flex bg-white items-center font-bold hover:text-[#1e733d] curved-6"
                 >
                   <span className="flex items-center font-bold font-sans gap-2">
