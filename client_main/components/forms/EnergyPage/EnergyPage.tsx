@@ -22,7 +22,6 @@ import EnergyData from "./EnergyData";
 const formSchema = z.object({
   month: z.string().min(1, "Month is required"),
   year: z.string().min(4, "Year is required"),
-  image: z.instanceof(File, { message: "Image is required" }).optional(),
   usage: z.string().optional(),
 });
 
@@ -32,7 +31,7 @@ type Props = {
   isLoading: boolean;
   title?: string;
   buttonText?: string;
-  onSubmit: (formData: FormData) => void; // Update this to expect FormData
+  onSubmit: (formData: EnergyLogFormData) => void; // Update this to expect FormData
 };
 
 const EnergyPage = ({
@@ -87,8 +86,11 @@ const EnergyPage = ({
     // Additional optional fields
     if (data.usage) formData.append("usage", data.usage);
 
-    onSubmit(formData); // Pass the FormData to the parent component
-  };
+    // Log formData to inspect its contents
+    console.log(formData);
+
+    onSubmit(data); // Pass the FormData to the parent component
+};
 
   return (
     <>
