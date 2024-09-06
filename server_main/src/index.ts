@@ -3,6 +3,7 @@ import cors from "cors";
 import "dotenv/config";
 import userRoutes from "./routes/userRoutes";
 import energyRoutes from "./routes/energyRoutes";
+import foodRoutes from "./routes/foodRoutes";
 import mongoose from "mongoose";
 
 mongoose
@@ -20,6 +21,7 @@ app.get("/health", async (req: Request, res: Response) => {
   });
   
 app.use("/api/my/user", userRoutes);
+app.use("api/my/foodTracking", foodRoutes);
 app.use("/api/my/energyTracking", energyRoutes);
 
 

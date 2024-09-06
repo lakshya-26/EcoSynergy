@@ -15,7 +15,7 @@ const foodSchema = new mongoose.Schema({
   date: { type: Date, default: Date.now },
 });
 
-const Food = mongoose.model("Energy", foodSchema);
+const Food = mongoose.model("Food", foodSchema);
 const FoodItem = mongoose.model('FoodItem', foodItemSchema);
 
 export {
