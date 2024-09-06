@@ -40,3 +40,14 @@ export const validateMyEnergyRequest = [
     .withMessage("Usage must be there"),
   handleValidationErrors,
 ];
+
+export const validateFoodRequest = [
+  body("meal")
+    .isString()
+    .notEmpty()
+    .withMessage("Meal must be provided."),
+  body("foods")
+    .isArray()
+    .withMessage("Foods array must contain at least one item."),
+  handleValidationErrors,
+];

@@ -2,8 +2,8 @@ import mongoose from "mongoose";
 
 const foodItemSchema = new mongoose.Schema({
   name: { type: String, required: true },
-  quantity: { type: Number, required: true },
-  co2: { type: Number, required: true },
+  quantity: { type: String, required: true },
+  co2: { type: String, required: true },
 });
 
 const foodSchema = new mongoose.Schema({

@@ -4,8 +4,8 @@ import mongoose from "mongoose";
 
 type foodProps = {
   name: string;
-  quantity: number;
-  co2: number;
+  quantity: string;
+  co2: string;
 };
 
 const logFoodData = async (req: Request, res: Response) => {
@@ -13,7 +13,8 @@ const logFoodData = async (req: Request, res: Response) => {
 
   try {
     const carbonFootprint: number = foods.reduce(
-      (total: number, food: foodProps) => total + food.co2 * food.quantity,
+      (total: number, food: foodProps) =>
+        total + parseFloat(food.co2) * parseFloat(food.quantity),
       0
     );
     const latestEntry = await Food.findOne({ userId: req.userId }).sort({
@@ -72,8 +73,4 @@ const getAllFoodItems = async (req: Request, res: Response) => {
   }
 };
 
-export {
-    logFoodData,
-    getFoodData,
-    getAllFoodItems
-}
+export { logFoodData, getFoodData, getAllFoodItems};
