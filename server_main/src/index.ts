@@ -21,8 +21,8 @@ app.get("/health", async (req: Request, res: Response) => {
   });
   
 app.use("/api/my/user", userRoutes);
-app.use("api/my/foodTracking", foodRoutes);
 app.use("/api/my/energyTracking", energyRoutes);
+app.use("api/my/foodTracking", foodRoutes);
 
 
 app.listen(7000, () => {
